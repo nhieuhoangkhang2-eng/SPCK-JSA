@@ -1,24 +1,22 @@
 let main = document.querySelector(".main");
 
-fetch("https://api.football-data.org/v4/competitions/PL/standings", {
-    headers: {
-        "X-Auth-Token": "bda249e26f5a4690a7b471e15be08f1f"
-    }
-})
-.then(response => response.json())
+fetch("https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/teams")
+.then(res => res.json())
 .then(data => {
 
-    let table = data.standings[0].table;
+    let teams = data.sports[0].leagues[0].teams;
 
-    table.forEach(team => {
+    teams.forEach(item => {
+
+        let team = item.team;
         main.innerHTML += `
-            <p>
-            ${team.position}. ${team.team.name} - ${team.points} pts
-            </p>
+        <div>
+            <img src="${team.logos[0].href}" width="40">
+            <a href="${team.links[0].href}" target="_blank">${team.displayName}</a>
+        </div>
         `;
+
     });
 
 })
-.catch(error => {
-    console.log(error);
-});
+.catch(err => console.log(err));
