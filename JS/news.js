@@ -17,7 +17,7 @@ fetch("http://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/news")
             <h2>${title}</h2>
             <p>${desc}</p>
             <img src="${img}">
-            <a href="${link}">Xem thêm</a>
+            <a href="${link}" target="_blank">Xem thêm</a>
         </div>
         `
     });

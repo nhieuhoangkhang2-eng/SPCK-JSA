@@ -30,12 +30,62 @@
             width:70px;
             margin-right:auto;
         }
+        .main{
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap:20px;
+            padding:20px;
+        }
+
+        /* CARD */
+        .main div{
+            background:white;
+            padding:15px;
+            border-radius:10px;
+            box-shadow:0 2px 8px rgba(0,0,0,0.1);
+            display:flex;
+            flex-direction:column;
+        }
+
+        /* TITLE */
+        .main h2{
+            font-size:18px;
+            margin-bottom:10px;
+            color:#37003c;
+        }
+
+        /* DESCRIPTION */
+        .main p{
+            font-size:14px;
+            color:#555;
+            margin-bottom:10px;
+        }
+
+        /* IMAGE */
+        .main img{
+            width:100%;
+            height:180px;
+            object-fit:cover;
+            border-radius:8px;
+            margin-bottom:10px;
+        }
+
+        /* LINK */
+        .main a{
+            margin-top:auto;
+            text-decoration:none;
+            font-weight:bold;
+            color:#007bff;
+        }
+
+        .main a:hover{
+            text-decoration:underline;
+        }
         footer{
             background:#222;
             color:white;
             text-align:center;
             padding:15px;
-            position:fixed;
             bottom:0;
             width:100%;
         }
@@ -44,18 +94,17 @@
 <body>
     <header>
         <nav>
-            <a href="index.html" class="logo"><img src="logo.png"></a>
+            <a href="indexlogined.html" class="logo"><img src="logo.png"></a>
             <a href="table.html"><button type="button" class="btn btn-info">Câu lạc bộ</button></a>
-            <a href="#"><button type="button" class="btn btn-info">Số liệu</button></a>
-            <a href="login.html"><button type="button" class="btn btn-primary">Đăng nhập</button></a>
-            <a href="resgiter.html"><button type="button" class="btn btn-secondary">Đăng kí</button></a>
+            <a href="#"><button type="button" class="btn btn-info">Tin tức</button></a>
+            <a href="index.html"><button type="button" class="btn btn-primary">Đăng xuất</button></a>
         </nav>
     </header>
     <div class="main">
 
     </div>
     <footer>
-        <p>Email: abc</p>
+        <p>Email: nhieuhoangkhang2@gmail.com</p>
     </footer>
     <script src="./JS/news.js"></script>
 </body>
