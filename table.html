@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bảng xếp hạng</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
         body{
@@ -58,17 +59,22 @@
             color:#333;
             font-size:18px;
             font-weight:bold;
+            cursor: pointer;
         }
 
         .main a:hover{
             color:#37003c;
+        }
+
+        .in4 {
+            display: none;
+            position: absolute;
         }
         footer{
             background:#222;
             color:white;
             text-align:center;
             padding:15px;
-            
             bottom:0;
             width:100%;
         }
@@ -84,11 +90,14 @@
         </nav>
     </header>
     <div class="main">
+        <article class="in4">
 
+        </article>
     </div>
     <footer>
         <p>Email: nhieuhoangkhang2@gmail.com</p>
     </footer>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="./JS/table.js"></script>
 </body>
 </html>
