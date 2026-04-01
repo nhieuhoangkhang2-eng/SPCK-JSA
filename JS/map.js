@@ -85,7 +85,7 @@ let params = new URLSearchParams(window.location.search);
 let teamName = params.get("team");
 let teamLink = params.get("link");
 let h1 = document.querySelector("h1");
-let a = document.querySelector("a");
+let a = document.querySelector("#readmore");
 
 let stadium = cords.find((s) => s.name.toLowerCase().includes(teamName.toLowerCase()));
 console.log(stadium)
@@ -97,12 +97,25 @@ if(stadium) {
         attribution: "© OpenStreetMap contributors",
       }).addTo(map);
 
-    L.marker([lat, lon])
-    .addTo(map)
-    .bindPopup(`${stadium.name}`)
-    .openPopup();
+
+
+    var redIcon = L.icon({
+        iconUrl:
+        "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
+        shadowUrl:
+        "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41],
+    });
+
+    // Use red marker
+    L.marker([lat, lon], { icon: redIcon })
+        .addTo(map)
+        .bindPopup(`${stadium.name}`)
+        .openPopup();
 
     h1.innerHTML = stadium.name;
-    
     a.href = teamLink;
 }
